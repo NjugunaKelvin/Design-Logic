@@ -1,22 +1,22 @@
 <template>
-  <div class="container mt-5">
+  <div class="container mt-5 text-light">
     <!-- Hero Section -->
     <div class="text-center">
-      <h1 class="text-primary fw-bold">Welcome to UI Insights</h1>
-      <p class="text-muted fs-5">Your go-to hub for improving UI/UX design</p>
+      <h1 class="text-info fw-bold">Welcome to UI Insights</h1>
+      <p class="fs-5">Your go-to hub for improving UI/UX design</p>
     </div>
 
     <!-- Featured UI/UX Designers -->
     <div class="mt-5">
-      <h2 class="text-center text-info">Notable UI/UX Designers</h2>
+      <h2 class="text-center text-warning">Notable UI/UX Designers</h2>
       <div class="row mt-4">
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4" v-for="(designer, index) in designers" :key="index">
-          <div class="card shadow-sm h-100">
+          <div class="card h-100 shadow-sm bg-dark text-light border border-secondary">
             <img :src="designer.image" class="card-img-top" alt="Designer">
             <div class="card-body text-center">
-              <h5 class="card-title">{{ designer.name }}</h5>
-              <p class="text-muted">{{ designer.work }}</p>
-              <a :href="designer.link" target="_blank" class="btn btn-outline-primary btn-sm">View Profile</a>
+              <h5 class="card-title text-warning">{{ designer.name }}</h5>
+              <p>{{ designer.work }}</p>
+              <a :href="designer.link" target="_blank" class="btn btn-outline-light btn-sm">View Profile</a>
             </div>
           </div>
         </div>
@@ -28,12 +28,12 @@
       <h2 class="text-center text-info">Trending UI/UX Insights</h2>
       <div class="row mt-4">
         <div class="col-md-4 col-sm-6 mb-4" v-for="(insight, index) in trendingInsights" :key="index">
-          <div class="card shadow-sm h-100">
+          <div class="card h-100 shadow-sm bg-dark text-light border border-secondary">
             <img :src="insight.image" class="card-img-top" alt="Insight">
             <div class="card-body">
-              <h5 class="card-title">{{ insight.title }}</h5>
+              <h5 class="card-title text-info">{{ insight.title }}</h5>
               <p class="card-text">{{ insight.description }}</p>
-              <button class="btn btn-info btn-sm">Read More</button>
+              <button class="btn btn-warning btn-sm">Read More</button>
             </div>
           </div>
         </div>
@@ -74,9 +74,20 @@ export default {
 </script>
 
 <style scoped>
+/* Dark Theme */
+body {
+  background-color: black;
+}
+
+.container {
+  background-color: black;
+}
+
 .card {
   border-radius: 12px;
   transition: transform 0.3s ease-in-out;
+  background-color: #1e1e1e;
+  border: 1px solid #333;
 }
 
 .card:hover {
@@ -86,5 +97,13 @@ export default {
 .card img {
   height: 180px;
   object-fit: cover;
+}
+
+.btn {
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  opacity: 0.8;
 }
 </style>

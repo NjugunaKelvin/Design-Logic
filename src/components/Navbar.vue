@@ -24,7 +24,10 @@
             <router-link class="nav-link" to="/about" :class="{ 'active-link': isActive('/about') }">About</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/resources" :class="{ 'active-link': isActive('/resoources') }">Resources</router-link>
+            <router-link class="nav-link" to="/resources" :class="{ 'active-link': isActive('/resources') }">Resources</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/community" :class="{ 'active-link': isActive('/community') }">Community</router-link>
           </li>
         </ul>
       </div>

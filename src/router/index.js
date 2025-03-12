@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import InsightsView from '@/views/InsightsView.vue'
 import AboutView from '@/views/AboutView.vue'
 import ResourcesView from '@/views/ResourcesView.vue'
+import CommunityView from '@/views/CommunityView.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/resources/',
     name: 'resources',
     component: ResourcesView
+  },
+  {
+    path: '/community/',
+    name: 'community',
+    component: CommunityView
   }
 ]
 

@@ -23,6 +23,9 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/about" :class="{ 'active-link': isActive('/about') }">About</router-link>
           </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/resources" :class="{ 'active-link': isActive('/resoources') }">Resources</router-link>
+          </li>
         </ul>
       </div>
     </div>

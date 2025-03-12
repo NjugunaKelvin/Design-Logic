@@ -1,22 +1,41 @@
 <template>
   <div class="container-fluid about-page">
     <!-- Hero Section -->
-    <div class="hero-section text-center text-white">
+    <div class="hero-section text-center">
       <h1 class="fw-bold fade-in">About UI Insights</h1>
       <p class="fs-5">Empowering designers & developers with top-notch UI/UX knowledge.</p>
     </div>
 
     <!-- Our Mission Section -->
     <div class="container mt-5 text-center fade-in">
-      <h2 class="text-primary fw-bold">Our Mission</h2>
-      <p class="text-muted fs-5">
-        We aim to provide the best UI/UX design principles, insights, and trends to help developers and designers create outstanding user experiences.
+      <h2 class="text-accent fw-bold">Our Mission</h2>
+      <p class="fs-5">
+        We aim to provide the best UI/UX design principles, insights, and trends to help developers and designers craft seamless experiences.
       </p>
+    </div>
+
+    <!-- Statistics Section -->
+    <div class="container mt-5">
+      <h2 class="text-glow text-center fw-bold">Our Impact</h2>
+      <div class="row text-center">
+        <div class="col-md-4 fade-in">
+          <h2 class="stat-number" v-if="showStats">{{ users }}+</h2>
+          <p class="fs-5">Active Users</p>
+        </div>
+        <div class="col-md-4 fade-in">
+          <h2 class="stat-number" v-if="showStats">{{ insights }}+</h2>
+          <p class="fs-5">Curated Insights</p>
+        </div>
+        <div class="col-md-4 fade-in">
+          <h2 class="stat-number" v-if="showStats">{{ mentors }}+</h2>
+          <p class="fs-5">Expert Mentors</p>
+        </div>
+      </div>
     </div>
 
     <!-- Timeline Section -->
     <div class="container mt-5">
-      <h2 class="text-info text-center fw-bold">Our Journey</h2>
+      <h2 class="text-accent text-center fw-bold">Our Journey</h2>
       <div class="timeline">
         <div class="timeline-item fade-in" v-for="(milestone, index) in milestones" :key="index">
           <div class="timeline-date">{{ milestone.date }}</div>
@@ -30,23 +49,23 @@
 
     <!-- Testimonials Section -->
     <div class="container mt-5">
-      <h2 class="text-center text-success fw-bold">What People Say</h2>
+      <h2 class="text-center text-glow fw-bold">What People Say</h2>
       <div class="row mt-4">
         <div class="col-md-4" v-for="(testimonial, index) in testimonials" :key="index">
-          <div class="card p-3 shadow-sm fade-in">
+          <div class="card testimonial-card p-3 shadow-sm fade-in">
             <p class="fw-bold">"{{ testimonial.quote }}"</p>
-            <h5 class="text-primary mt-3">{{ testimonial.name }}</h5>
-            <p class="text-muted">{{ testimonial.role }}</p>
+            <h5 class="text-accent mt-3">{{ testimonial.name }}</h5>
+            <p class="fs-6">{{ testimonial.role }}</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Join Us Section -->
+    <!-- Call to Action -->
     <div class="container text-center mt-5 fade-in">
-      <h2 class="fw-bold text-warning">Join Our Community</h2>
-      <p class="fs-5 text-muted">Be part of a thriving community of designers & developers.</p>
-      <button class="btn btn-primary btn-lg mt-3">Join Now</button>
+      <h2 class="fw-bold text-glow">Join Our Community</h2>
+      <p class="fs-5">Be part of a thriving community of designers & developers.</p>
+      <button class="btn btn-accent btn-lg mt-3">Join Now</button>
     </div>
   </div>
 </template>
@@ -55,6 +74,10 @@
 export default {
   data() {
     return {
+      showStats: false,
+      users: 0,
+      insights: 0,
+      mentors: 0,
       milestones: [
         { date: "2024", title: "UI Insights Launched", description: "Our journey began with a vision to improve UI/UX learning." },
         { date: "2025", title: "First 10,000 Users", description: "We hit our first major milestone, growing our community." },
@@ -67,23 +90,63 @@ export default {
       ],
     };
   },
+  mounted() {
+    setTimeout(() => {
+      this.showStats = true;
+      this.animateStats();
+    }, 500);
+  },
+  methods: {
+    animateStats() {
+      let countUsers = 0, countInsights = 0, countMentors = 0;
+      const interval = setInterval(() => {
+        if (countUsers < 15000) countUsers += 500;
+        if (countInsights < 300) countInsights += 10;
+        if (countMentors < 50) countMentors += 2;
+
+        this.users = countUsers;
+        this.insights = countInsights;
+        this.mentors = countMentors;
+
+        if (countUsers >= 15000 && countInsights >= 300 && countMentors >= 50) {
+          clearInterval(interval);
+        }
+      }, 50);
+    },
+  }
 };
 </script>
 
 <style scoped>
+/* Dark Theme */
+.about-page {
+  background-color: #121212;
+  color: #f1f1f1;
+  padding-bottom: 50px;
+}
+
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(to right, #1e3c72, #2a5298);
+  background: linear-gradient(to right, #1a1a1a, #333);
   padding: 100px 20px;
   border-radius: 10px;
-  animation: slideIn 1s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.text-accent {
+  color: #00eaff;
+}
+
+.text-glow {
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff;
 }
 
 /* Timeline */
 .timeline {
   position: relative;
   padding-left: 40px;
-  border-left: 4px solid #007bff;
+  border-left: 3px solid #00eaff;
 }
 
 .timeline-item {
@@ -93,14 +156,46 @@ export default {
 
 .timeline-date {
   font-weight: bold;
-  color: #007bff;
+  color: #00eaff;
 }
 
 .timeline-content {
-  background: #f8f9fa;
+  background: rgba(255, 255, 255, 0.05);
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 234, 255, 0.2);
+}
+
+/* Testimonials */
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 234, 255, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.05);
+}
+
+/* Animated Numbers */
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00eaff;
+}
+
+/* Button */
+.btn-accent {
+  background-color: #00eaff;
+  color: #121212;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-accent:hover {
+  background-color: #0088a9;
+  color: white;
 }
 
 /* Animations */
@@ -108,23 +203,8 @@ export default {
   animation: fadeIn 1s ease-in-out;
 }
 
-@keyframes slideIn {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 </style>

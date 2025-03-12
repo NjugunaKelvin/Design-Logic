@@ -21,7 +21,7 @@
 <script>
   import bookImage from '@/assets/book.jpeg';
   import toolImage from '@/assets/tool.jpeg';
-  import inspirationImage from '@/assets/inspiration.jpeg';
+  import inspirationImage from '@/assets/inspiration.png';
   
   export default {
     data() {

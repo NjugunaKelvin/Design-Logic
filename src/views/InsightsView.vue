@@ -32,7 +32,7 @@
       <!-- Insights Grid -->
       <div class="col-lg-9 col-md-8 col-sm-12">
         <h2 class="text-info text-center fw-bolder">UI/UX Insights</h2>
-        <p class="text-center fw-bold">Explore best practices, examples, and tips to improve your designs.</p>
+        <p class="text-center fw-bold text-white">Explore best practices, examples, and tips to improve your designs.</p>
 
         <!-- Search Bar -->
         <div class="mb-4 d-flex justify-content-center">
@@ -48,9 +48,9 @@
           <div class="col-lg-4 col-md-6 col-sm-12 mb-4" v-for="(insight, index) in filteredInsights" :key="index">
             <div class="card h-100 shadow-sm">
               <img :src="insight.image" class="card-img-top" alt="UI Insight">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">{{ insight.title }}</h5>
-                <p class="card-text flex-grow-1">{{ insight.description }}</p>
+              <div class="card-body d-flex flex-column bg-black">
+                <h5 class="card-title text-primary">{{ insight.title }}</h5>
+                <p class="card-text flex-grow-1 text-white">{{ insight.description }}</p>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@
 
         <!-- No Insights Found -->
         <div v-if="filteredInsights.length === 0" class="text-center w-100 mt-4">
-          <p class="text-muted">No insights found.</p>
+          <p class="text-white">No insights found.</p>
         </div>
       </div>
     </div>

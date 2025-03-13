@@ -62,9 +62,9 @@
 </template>
   
   <script>
-  import figmaImage from "@/assets/figma.png";
-  import colorTheoryImage from "@/assets/color-theory.jpg";
-  import typographyImage from "@/assets/typography.png";
+  import figmaImage from "@/assets/figma.jpg";
+  import colorTheoryImage from "@/assets/color-theory.jpeg";
+  import typographyImage from "@/assets/typography.jpeg";
   import freebiesImage from "@/assets/freebies.jpg";
   import uxLawsImage from "@/assets/ux-laws.png";
   

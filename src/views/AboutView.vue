@@ -2,7 +2,7 @@
   <div class="container-fluid about-page">
     <!-- Hero Section -->
     <div class="hero-section text-center">
-      <h1 class="fw-bold fade-in">About UI Insights</h1>
+      <h1 class="fw-bold fade-in neon-text">About UI Insights</h1>
       <p class="fs-5">Empowering designers & developers with top-notch UI/UX knowledge.</p>
     </div>
 
@@ -136,6 +136,10 @@ export default {
 .text-accent {
   color: #00eaff;
 }
+.neon-text {
+    color: #ffcc00;
+    text-shadow: 0px 0px 15px #ffcc00;
+  }
 
 .text-glow {
   color: #00eaff;

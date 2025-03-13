@@ -1,4 +1,6 @@
 <template>
+ <br>
+ <br>
     <div class="container mt-5">
       <!-- Page Header -->
       <div class="text-center mb-5">
@@ -65,8 +67,8 @@
   import figmaImage from "@/assets/figma.jpg";
   import colorTheoryImage from "@/assets/color-theory.jpeg";
   import typographyImage from "@/assets/typography.jpeg";
-  import freebiesImage from "@/assets/freebies.jpg";
-  import uxLawsImage from "@/assets/ux-laws.png";
+  import freebiesImage from "@/assets/freebies.jpeg";
+  import uxLawsImage from "@/assets/ux-laws.jpeg";
   
   export default {
     data() {

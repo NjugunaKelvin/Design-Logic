@@ -53,7 +53,7 @@
       <div class="row mt-4">
         <div class="col-md-4" v-for="(testimonial, index) in testimonials" :key="index">
           <div class="card testimonial-card p-3 shadow-sm fade-in">
-            <p class="fw-bold">"{{ testimonial.quote }}"</p>
+            <p class="fw-bold text-white">"{{ testimonial.quote }}"</p>
             <h5 class="text-accent mt-3">{{ testimonial.name }}</h5>
             <p class="fs-6">{{ testimonial.role }}</p>
           </div>

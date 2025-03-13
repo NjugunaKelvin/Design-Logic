@@ -5,7 +5,7 @@
       <!-- Page Header -->
       <div class="text-center mb-5">
         <h2 class="fw-bold neon-text">📚 UI/UX Resources Hub</h2>
-        <p class="sub-text">Your one-stop collection of the best UI/UX resources.</p>
+        <p class="sub-text text-white">Your one-stop collection of the best UI/UX resources.</p>
       </div>
   
       <!-- Search & Filter -->
@@ -35,7 +35,7 @@
         <a :href="featuredResource.link" target="_blank" class="featured-link">
           <h5>{{ featuredResource.title }}</h5>
         </a>
-        <p>{{ featuredResource.description }}</p>
+        <p class="text-white">{{ featuredResource.description }}</p>
       </div>
   
       <!-- Resource Grid -->
@@ -47,9 +47,9 @@
         >
           <div class="card resource-card h-100 shadow-sm">
             <img :src="resource.image" class="card-img-top" alt="Resource Image" />
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">{{ resource.title }}</h5>
-              <p class="card-text flex-grow-1">{{ resource.description }}</p>
+            <div class="card-body d-flex flex-column bg-dark">
+              <h5 class="card-title fw-bolder text-white">{{ resource.title }}</h5>
+              <p class="card-text flex-grow-1 text-white">{{ resource.description }}</p>
               <a :href="resource.link" target="_blank" class="btn btn-glow">Access</a>
             </div>
           </div>
